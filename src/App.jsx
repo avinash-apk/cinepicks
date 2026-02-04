@@ -5,12 +5,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MovieGrid from './components/MovieGrid';
 import Modal from './components/Modal';
-import SearchOverlay from './components/SearchOverlay'; // Import this
+import SearchOverlay from './components/SearchOverlay';
 
 function App() {
   const [heroMovie, setHeroMovie] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [isSearchOpen, setIsSearchOpen] = useState(false); // State for search
+  const [isSearchOpen, setIsSearchOpen] = useState(false); 
 
   useEffect(() => {
     const fetchHero = async () => {
@@ -37,7 +37,7 @@ function App() {
           <SearchOverlay 
             isOpen={isSearchOpen} 
             onClose={() => setIsSearchOpen(false)}
-            onMovieClick={setSelectedMovie} // Re-use the existing modal logic
+            onMovieClick={setSelectedMovie}
           />
         )}
       </AnimatePresence>

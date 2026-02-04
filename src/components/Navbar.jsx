@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Menu, X } from 'lucide-react'; // Added X icon
+import { Search, Menu, X } from 'lucide-react'; //X icon
 
 const Navbar = ({ onSearchClick }) => { // Accept prop
   const [isScrolled, setIsScrolled] = useState(false);

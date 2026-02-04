@@ -48,7 +48,6 @@ const SearchOverlay = ({ isOpen, onClose, onMovieClick }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      // PERFORMANCE FIX: Removed backdrop-blur, used solid dark background
       className="fixed inset-0 z-50 bg-cinema-black overflow-y-auto"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -75,7 +74,6 @@ const SearchOverlay = ({ isOpen, onClose, onMovieClick }) => {
             <Loader2 className="w-12 h-12 text-cinema-red animate-spin" />
           </div>
         ) : (
-          // Added 'layout' prop here to smooth out the grid resizing
           <motion.div layout className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {results.map((movie) => (
               movie.poster_path && (
@@ -88,9 +86,7 @@ const SearchOverlay = ({ isOpen, onClose, onMovieClick }) => {
                   className="cursor-pointer group"
                 >
                   <div className="aspect-[2/3] rounded-lg overflow-hidden mb-2 bg-gray-800">
-                    <img 
-                      // PERFORMANCE FIX: Smaller image size (w342) for faster painting
-                      src={getImageUrl(movie.poster_path, 'w342')} 
+                    <img src={getImageUrl(movie.poster_path, 'w342')} 
                       alt={movie.title}
                       loading="lazy"
                       className="w-full h-full object-cover"

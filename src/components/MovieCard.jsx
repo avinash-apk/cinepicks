@@ -5,7 +5,7 @@ import { getImageUrl } from '../api';
 const MovieCard = ({ movie, onClick }) => {
   return (
     <motion.div 
-      layoutId={`movie-${movie.id}`} //for shared element transition later
+      layoutId={`movie-${movie.id}`}
       onClick={() => onClick(movie)}
       className="relative group w-full h-full cursor-pointer overflow-hidden rounded-xl bg-cinema-dark"
       whileHover={{ y: -5 }}

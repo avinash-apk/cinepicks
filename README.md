@@ -1,16 +1,26 @@
-# React + Vite
+# CinePicks - Cinematic Movie Discovery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page movie recommendation application built with React and Vite. Features a bento-style grid layout, fast animations, and a working instant search using the TMDB API.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Core:** React 18, Vite
+- **Styling:** Tailwind CSS (v3.4)
+- **Animations:** Framer Motion (Shared Element Transitions, Parallax)
+- **Data:** Axios, TMDB API
+- **Icons:** Lucide React
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Parallax Section:** Scroll-linked animations for immersive headers.
+- **Bento Grid Layout:** Irregular, magazine-style grid for trending movies.
+- **High-Performance Modals:** fast overlay details without layout thrashing.
+- **Instant Search:** Debounced search overlay with optimized rendering.
+- **Responsive Design:** Adaptive screen resizing, making it compatible with all devices.
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/avinash-apk/cinepicks.git](https://github.com/avinash-apk/cinepicks.git)
+   cd cinepicks

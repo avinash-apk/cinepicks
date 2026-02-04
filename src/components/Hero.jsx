@@ -4,7 +4,7 @@ import { getImageUrl } from '../api';
 
 const Hero = ({ movie }) => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]); // Parallax effect
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
 
   if (!movie) return null;
 
