@@ -12,7 +12,7 @@ export default {
         'cinema-red': '#E50914',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
       },
     },
   },

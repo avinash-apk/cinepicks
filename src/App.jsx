@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion'; 
+import { AnimatePresence } from 'framer-motion';
 import api, { endpoints } from './api';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MovieGrid from './components/MovieGrid';
-import Modal from './components/Modal'; 
+import Modal from './components/Modal';
+import SearchOverlay from './components/SearchOverlay'; // Import this
 
 function App() {
   const [heroMovie, setHeroMovie] = useState(null);
-  const [selectedMovie, setSelectedMovie] = useState(null); 
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // State for search
 
   useEffect(() => {
     const fetchHero = async () => {
@@ -23,13 +25,23 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cinema-black text-white">
-      <Navbar />
+    <div className="min-h-screen bg-cinema-black text-white font-sans">
+      <Navbar onSearchClick={() => setIsSearchOpen(true)} />
+      
       {heroMovie && <Hero movie={heroMovie} />}
       
       <MovieGrid onMovieClick={setSelectedMovie} />
 
-      {/*animation presence for modal*/}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <SearchOverlay 
+            isOpen={isSearchOpen} 
+            onClose={() => setIsSearchOpen(false)}
+            onMovieClick={setSelectedMovie} // Re-use the existing modal logic
+          />
+        )}
+      </AnimatePresence>
+
       <AnimatePresence>
         {selectedMovie && (
           <Modal 
