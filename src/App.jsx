@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion'; 
 import api, { endpoints } from './api';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MovieGrid from './components/MovieGrid';
+import Modal from './components/Modal'; 
 
 function App() {
   const [heroMovie, setHeroMovie] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null); 
 
   useEffect(() => {
     const fetchHero = async () => {
@@ -19,16 +22,22 @@ function App() {
     fetchHero();
   }, []);
 
-  // Placeholder handler
-  const handleMovieClick = (movie) => {
-    console.log("Clicked:", movie.title);
-  };
-
   return (
     <div className="min-h-screen bg-cinema-black text-white">
       <Navbar />
       {heroMovie && <Hero movie={heroMovie} />}
-      <MovieGrid onMovieClick={handleMovieClick} />
+      
+      <MovieGrid onMovieClick={setSelectedMovie} />
+
+      {/*animation presence for modal*/}
+      <AnimatePresence>
+        {selectedMovie && (
+          <Modal 
+            movie={selectedMovie} 
+            onClose={() => setSelectedMovie(null)} 
+          />
+        )}
+      </AnimatePresence>
     </div>
   )
 }
