@@ -13,7 +13,7 @@ A single-page movie recommendation application built with React and Vite. Featur
 ## Features
 
 - **Parallax Section:** Scroll-linked animations for immersive headers.
-- **Bento Grid Layout:** Irregular, magazine-style grid for trending movies.
+- **Bento Grid Layout:** Irregular, magazine-style grid for favorite movies.
 - **High-Performance Modals:** fast overlay details without layout thrashing.
 - **Instant Search:** Debounced search overlay with optimized rendering.
 - **Responsive Design:** Adaptive screen resizing, making it compatible with all devices.
