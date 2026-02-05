@@ -33,7 +33,8 @@ const SearchOverlay = ({ isOpen, onClose, onMovieClick }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
+    } 
+    return () => {
       document.body.style.overflow = 'unset';
       setQuery(''); 
       setResults([]);
