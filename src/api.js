@@ -11,7 +11,6 @@ const api = axios.create({
   },
 });
 
-// Endpoints object to keep URLs organized
 export const endpoints = {
   trending: '/trending/movie/week',
   topRated: '/movie/top_rated',
@@ -22,7 +21,6 @@ export const endpoints = {
   search: '/search/movie',
 };
 
-// Image helper function to get full URLs
 export const getImageUrl = (path, size = 'original') => {
   if (!path) return '/placeholder-movie.png';
   return `https://image.tmdb.org/t/p/${size}${path}`;

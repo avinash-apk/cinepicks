@@ -15,8 +15,8 @@ function App() {
   useEffect(() => {
     const fetchHero = async () => {
       try {
-        const { data } = await api.get(endpoints.trending);
-        setHeroMovie(data.results[0]);
+        const { data } = await api.get(endpoints.movieDetails(466420));
+        setHeroMovie(data);
       } catch (error) {
         console.error(error);
       }

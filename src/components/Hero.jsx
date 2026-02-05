@@ -48,12 +48,6 @@ const Hero = ({ movie }) => {
             transition={{ delay: 0.5 }}
             className="flex gap-4 pt-4"
           >
-            <button className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded hover:bg-gray-200 transition-colors font-bold">
-              <Play className="w-5 h-5 fill-black" /> Play
-            </button>
-            <button className="flex items-center gap-2 bg-gray-500/30 backdrop-blur-sm text-white px-6 py-3 rounded hover:bg-gray-500/40 transition-colors font-bold border border-white/20">
-              <Info className="w-5 h-5" /> More Info
-            </button>
           </motion.div>
         </div>
       </div>
