@@ -21,11 +21,16 @@ const Navbar = ({ onSearchClick }) => {
   };
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior:'smooth'});
-      setIsMobileMenuOpen(false);
-    }
+    setIsMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset=80;
+        const elementPosition=element.getBoundingClientRect().top;
+        const offsetPosition=elementPosition+window.scrollY-headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });        
+      }
+    },100);
   };
 
   return (
