@@ -44,8 +44,8 @@ const Navbar = ({ onSearchClick }) => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button onClick={scrollToTop} className="text-white hover:text-cinema-red transition-colors px-3 py-2 rounded-md font-medium">Home</button>
-              <button onClick={() => scrollToSection('favorites')} className="text-gray-300 hover:text-cinema-red transition-colors px-3 py-2 rounded-md font-medium">Favorites</button>
+              <button onClick={()=>scrollToSection('Home')} className="text-white hover:text-cinema-red transition-colors px-3 py-2 rounded-md font-medium">Home</button>
+              <button onClick={()=>scrollToSection('favorites')} className="text-gray-300 hover:text-cinema-red transition-colors px-3 py-2 rounded-md font-medium">Favorites</button>
             </div>
           </div>
           <div className="flex items-center gap-6">

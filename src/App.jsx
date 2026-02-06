@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cinema-black text-white font-sans">
+    <div className="min-h-screen bg-cinema-black text-white font-sans" id="Home">
       <Navbar onSearchClick={() => setIsSearchOpen(true)} />
       
       {heroMovie && <Hero movie={heroMovie} />}
