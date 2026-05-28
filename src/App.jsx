@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import api, { endpoints } from './api';
 import Navbar from './components/Navbar';
@@ -28,9 +29,14 @@ function App() {
     <div className="min-h-screen bg-cinema-black text-white font-sans" id="Home">
       <Navbar onSearchClick={() => setIsSearchOpen(true)} />
       
-      {heroMovie && <Hero movie={heroMovie} />}
-      
-      <MovieGrid onMovieClick={setSelectedMovie} />
+      <Routes>
+        <Route path="/" element={
+          heroMovie && <Hero movie={heroMovie} />
+        } />
+        <Route path="/favorites" element={
+          <MovieGrid onMovieClick={setSelectedMovie} />
+        } />
+      </Routes>
 
       <AnimatePresence>
         {isSearchOpen && (
